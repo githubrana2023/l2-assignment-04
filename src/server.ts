@@ -6,7 +6,7 @@ import { Server } from 'http'
 let server: Server
 const connectDb = async () => {
     try {
-        mongoose.connect(config.mongodbUrl)
+        await mongoose.connect(config.mongodbUrl)
         server = app.listen(config.port, () => {
             console.log({
                 db: 'database successfully connected with server',
